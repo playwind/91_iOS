@@ -36,8 +36,8 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:@"Accept-Language" forKey:@"zh-CN,zh-Hans;q=0.9"];
-    [manager GET:url parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [parameters setObject:@"cn_CN" forKey:@"session_language"];
+    [manager POST:url parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         //NSLog(@"response: %@", htmlString);
         NSMutableArray<YBVideoModel *> * videos = [self parseVideoListFromHtml: htmlString];
