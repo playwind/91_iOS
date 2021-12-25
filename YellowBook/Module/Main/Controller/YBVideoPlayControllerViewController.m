@@ -2,8 +2,6 @@
 //  YBVideoPlayControllerViewController.m
 //  YellowBook
 //
-//  Created by 郑传书 on 2021/12/3.
-//
 
 #import "YBVideoPlayControllerViewController.h"
 #import <SJVideoPlayer/SJVideoPlayer.h>
