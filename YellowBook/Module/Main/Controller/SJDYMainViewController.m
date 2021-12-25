@@ -108,9 +108,6 @@ typedef NS_ENUM(NSUInteger, DYApplicationState) {
     _pageViewController.delegate = self;
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
-    [_pageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.offset(0);
-    }];
     
     _pageMenuBar = [SJPageMenuBar.alloc initWithFrame:CGRectZero];
     _pageMenuBar.backgroundColor = UIColor.whiteColor;
@@ -150,6 +147,12 @@ typedef NS_ENUM(NSUInteger, DYApplicationState) {
         //make.centerX.offset(0);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(44);
+    }];
+    
+    [_pageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(_pageMenuBar.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom);
     }];
 }
 

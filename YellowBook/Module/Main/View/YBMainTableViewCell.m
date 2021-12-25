@@ -37,6 +37,8 @@
         _videoTitle.textColor = [UIColor blackColor];
         _videoTitle.font = [UIFont systemFontOfSize:14];
         _videoTitle.textAlignment = NSTextAlignmentLeft;
+        _videoTitle.numberOfLines = 0;
+        [_videoTitle sizeToFit];
         [self.contentView addSubview:_videoTitle];
         
 //        _authorPhoto = [[UIImageView alloc] init];
@@ -50,6 +52,8 @@
         _authorName.textColor = [UIColor grayColor];
         _authorName.font = [UIFont systemFontOfSize: 12];
         _authorName.textAlignment = NSTextAlignmentLeft;
+        _authorName.numberOfLines = 0;
+        [_authorName sizeToFit];
         [self.contentView addSubview: _authorName];
         
         [_videoCovers mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,7 +61,6 @@
             make.right.equalTo(self.contentView.mas_right);
             make.top.equalTo(self.contentView.mas_top);
             make.size.mas_equalTo(CGSizeMake(376, 235)).priorityHigh();
-            make.bottom.mas_equalTo(_videoTitle.mas_top);
         }];
         
 //        [_authorPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -71,7 +74,6 @@
             make.left.equalTo(_videoCovers.mas_left).offset(10);
             make.right.equalTo(_videoCovers.mas_right).offset(10);
             make.top.equalTo(_videoCovers.mas_bottom).offset(10);
-            make.bottom.mas_equalTo(_authorName.mas_top);
         }];
         
         [_authorName mas_makeConstraints:^(MASConstraintMaker *make) {

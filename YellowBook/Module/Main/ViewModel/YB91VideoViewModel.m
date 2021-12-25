@@ -117,7 +117,7 @@
         //*[@id="wrapper"]/div[1]/div[3]/div/div/div[1]/div/text()[2]
         NSString *videoContent = video.text();
         NSLog(@"视频内容: %@", videoContent);
-        videoModel.videoAuthor = @"91原创";
+        videoModel.videoAuthor = videoContent;
         [videoArray addObject:videoModel];
     }
     return videoArray;

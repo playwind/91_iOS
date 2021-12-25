@@ -86,7 +86,6 @@
 		A81CEC6E272EE89B0027926E /* YellowBookUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YellowBookUITestsLaunchTests.m; sourceTree = "<group>"; };
 		A81CEC7D272EF2DB0027926E /* YBMainViewControllerTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMainViewControllerTableViewController.h; sourceTree = "<group>"; };
 		A81CEC7E272EF2DB0027926E /* YBMainViewControllerTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMainViewControllerTableViewController.m; sourceTree = "<group>"; };
-		A81CEC81272EF3E30027926E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A81CEC86273028BA0027926E /* YBMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMainTableViewCell.h; sourceTree = "<group>"; };
 		A81CEC87273028BA0027926E /* YBMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMainTableViewCell.m; sourceTree = "<group>"; };
 		A81E036C276DCDD2001C3396 /* YB91VideoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YB91VideoViewModel.h; sourceTree = "<group>"; };
@@ -743,7 +742,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A81CEC50272EE8990027926E /* Base */,
-				A81CEC81272EF3E30027926E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

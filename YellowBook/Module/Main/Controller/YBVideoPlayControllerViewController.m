@@ -17,15 +17,15 @@
 @implementation YBVideoPlayControllerViewController
 
 - (void)getVideoUrl {
-    NSString *url = _videoInfo.videoURL;
-    NSLog(@"play video: %@", url);
     [SVProgressHUD show];
-    [[[YB91VideoViewModel alloc] init] parseVideoUrl:url success:^(NSString * _Nonnull videoURL) {
+    [[[YB91VideoViewModel alloc] init] parseVideoUrl:_videoInfo.videoURL success:^(NSString * _Nonnull videoURL) {
         dispatch_async(dispatch_get_main_queue(),   ^ {
             [SVProgressHUD showSuccessWithStatus: @"视频地址解析成功"];
             NSMutableDictionary * headers = [NSMutableDictionary dictionary];
             [headers setObject:@"https://www.91porn.com/" forKey:@"Referer"];
-            AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:videoURL] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
+            //NSString *url = TEST_VIDEO_URL;
+            NSString *url = videoURL;
+            AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
             [self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
             self.videoURL.text = videoURL;
         });
@@ -44,7 +44,7 @@
 }
 
 - (void)initViews {
-    self.title = NSStringFromClass(self.class);
+    self.title = _videoInfo.videoTitle;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _player = [SJVideoPlayer player];
