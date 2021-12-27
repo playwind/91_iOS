@@ -34,6 +34,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         [self.cacheSizeLabel clearCache];
+    } else if (indexPath.row == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/playwind/YellowBook"] options:nil completionHandler:nil];
     }
 }
 

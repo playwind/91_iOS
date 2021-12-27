@@ -10,7 +10,9 @@
 
 @interface YBMainViewControllerTableViewController ()
 
-@property (nonatomic, copy) NSArray<YBVideoModel *> * videoList;
+@property (nonatomic, copy) NSMutableArray<YBVideoModel *> * videoList;
+
+@property (nonatomic, copy) YB91VideoViewModel *viewModel;
 
 @end
 
@@ -21,8 +23,8 @@
 
 - (void)loadData {
     [SVProgressHUD show];
-    [[[YB91VideoViewModel alloc] initWithCategory:_videoCategory page:1] loadMore:false success:^(NSArray<YBVideoModel *> *videoArrays) {
-        self->_videoList = videoArrays;
+    [_viewModel loadMore:false success:^(NSArray<YBVideoModel *> *videoArrays) {
+        self->_videoList = videoArrays.mutableCopy;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -32,6 +34,20 @@
         NSLog(@"%@", errorInfo);
         [SVProgressHUD showErrorWithStatus: errorInfo];
         [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+- (void)loadMore {
+    [_viewModel loadMore:true success:^(NSArray<YBVideoModel *> *videoArrays) {
+        [self.videoList addObjectsFromArray:videoArrays];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        [self.tableView.mj_footer endRefreshing];
+    } failure:^(NSString * errorInfo) {
+        NSLog(@"%@", errorInfo);
+        [SVProgressHUD showErrorWithStatus: errorInfo];
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -45,8 +61,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    _viewModel = [[YB91VideoViewModel alloc] initWithCategory:_videoCategory page:1];
+    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction: @selector(loadData)];
 
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+    
     self.tableView.estimatedRowHeight = 285;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.autoresizesSubviews = NO;

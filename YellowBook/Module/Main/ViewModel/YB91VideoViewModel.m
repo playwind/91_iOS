@@ -117,6 +117,30 @@
         //*[@id="wrapper"]/div[1]/div[3]/div/div/div[1]/div/text()[2]
         NSString *videoContent = video.text();
         NSLog(@"视频内容: %@", videoContent);
+        NSRange titleStart = [videoContent rangeOfString:videoTitle];
+        if (titleStart.location == NSNotFound) {
+            titleStart = NSMakeRange(5, 1);
+        }
+        NSRange timeStart = [videoContent rangeOfString:@"添加时间"];
+        NSRange authorStart = [videoContent rangeOfString:@"作者:"];
+        NSRange viewStart = [videoContent rangeOfString:@"查看:"];
+        NSRange favStart = [videoContent rangeOfString:@"收藏"];
+        NSRange commentStart = [videoContent rangeOfString:@"留言"];
+        NSRange jifen = [videoContent rangeOfString:@"积分"];
+        
+        NSString *duration = [videoContent substringToIndex: titleStart.location];
+        duration = [duration stringByReplacingOccurrencesOfString:@"HD91" withString:@""];
+        duration = [duration stringByReplacingOccurrencesOfString:@"91" withString:@""];
+        NSString *addTime = [videoContent substringWithRange:NSMakeRange(timeStart.location, authorStart.location - timeStart.location)];
+        addTime = [addTime stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString *author = [videoContent substringWithRange:NSMakeRange(authorStart.location, viewStart.location - authorStart.location)];
+        author = [author stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+        author = [author stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        author = [author stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString *fav = [videoContent substringWithRange:NSMakeRange(favStart.location, commentStart.location - favStart.location)];
+        NSString *comment = [videoContent substringWithRange:NSMakeRange(commentStart.location, jifen.location - commentStart.location)];
+        NSString *views = [videoContent substringWithRange:NSMakeRange(viewStart.location, favStart.location - viewStart.location)];
+        videoContent = [NSString stringWithFormat:@"%@\t时长: %@\t%@\n%@\t%@ %@", author, duration, views, addTime, fav, comment];
         videoModel.videoAuthor = videoContent;
         [videoArray addObject:videoModel];
     }
