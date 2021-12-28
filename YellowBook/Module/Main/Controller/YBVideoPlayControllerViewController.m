@@ -6,12 +6,10 @@
 #import "YBVideoPlayControllerViewController.h"
 #import <SJVideoPlayer/SJVideoPlayer.h>
 #import "YB91VideoViewModel.h"
+#import "AwemeListCell.h"
 
 @interface YBVideoPlayControllerViewController ()
-@property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic, strong) SJVideoPlayer *player;
-@property (nonatomic, strong) UILabel *videoTitle;
-@property (nonatomic, strong) UILabel *videoURL;
 @end
 
 @implementation YBVideoPlayControllerViewController
@@ -20,14 +18,13 @@
     [SVProgressHUD show];
     [[[YB91VideoViewModel alloc] init] parseVideoUrl:_videoInfo.videoURL success:^(NSString * _Nonnull videoURL) {
         dispatch_async(dispatch_get_main_queue(),   ^ {
-            [SVProgressHUD showSuccessWithStatus: @"视频地址解析成功"];
+            [SVProgressHUD dismiss];
             NSMutableDictionary * headers = [NSMutableDictionary dictionary];
             [headers setObject:@"https://www.91porn.com/" forKey:@"Referer"];
             //NSString *url = TEST_VIDEO_URL;
             NSString *url = videoURL;
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
             [self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
-            self.videoURL.text = videoURL;
         });
     } failure:^(NSString * _Nonnull message) {
         NSLog(@"Error: %@", message);
@@ -35,52 +32,57 @@
     }];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setStatusBarBackgroundColor: [UIColor clearColor]];
+    [self setBackgroundImage:@"img_video_loading"];
+    [self setLeftButton:@"icon_titlebar_whiteback"];
     [self initViews];
     _player.gestureControl.supportedGestureTypes |= SJPlayerGestureType_LongPress;
     _player.rateWhenLongPressGestureTriggered = 2.0;
+    
 }
 
 - (void)initViews {
-    self.title = _videoInfo.videoTitle;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _player = [SJVideoPlayer player];
-    [_containerView addSubview:_player.view];
     
-    _videoTitle = [[UILabel alloc] init];
-    _videoTitle.numberOfLines = 0;
-    [_videoTitle sizeToFit];
-    _videoTitle.textColor = [UIColor blackColor];
-    _videoTitle.font = [UIFont systemFontOfSize:18];
-    _videoTitle.textAlignment = NSTextAlignmentLeft;
-    _videoTitle.text = _videoInfo.videoTitle;
-    [self.view addSubview:_videoTitle];
-    
-    _videoURL = [[UILabel alloc] init];
-    [_videoURL setNumberOfLines:0];
-    [_videoURL sizeToFit];
-    [self.view addSubview: _videoURL];
+    UIView *videoContainer = [UIView new];
+    [videoContainer addSubview: _player.view];
+    //[self.view addSubview: videoContainer];
     
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
     }];
     
-    [_videoTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_containerView).mas_offset(10);
-        make.right.mas_equalTo(_containerView);
-        make.top.mas_equalTo(_containerView.mas_bottom).mas_offset(10);
-    }];
+    AwemeListCell *cell = [[AwemeListCell alloc] init];
+    cell.playerView = videoContainer;
+    [cell initSubViews];
+    [cell initData: _videoInfo];
+    [self.view addSubview: cell];
     
-    [_videoURL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_containerView).mas_offset(10);
-        make.right.mas_equalTo(_containerView);
-        make.top.mas_equalTo(_videoTitle.mas_bottom).mas_offset(10);
+    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.offset(0);
     }];
     
     [self getVideoUrl];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    [(SJDYPlaybackListViewController *)self.pageViewController.focusedViewController playIfNeeded];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 /*
@@ -92,5 +94,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)applicationBecomeActive {
+
+}
+
+- (void)applicationEnterBackground {
+
+}
 
 @end

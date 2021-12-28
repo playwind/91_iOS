@@ -29,7 +29,7 @@
     item.videoDuration = @"2:34";
     item.videoUploadTime = @"2021-10-18 15:12:30";
     item.videoFavorites = @"888";
-    
+    item.videoDesc = @"xxxxxxxxxxxxxxxxxxx";
     return item;
 }
 

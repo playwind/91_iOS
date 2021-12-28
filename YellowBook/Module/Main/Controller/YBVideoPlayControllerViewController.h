@@ -5,10 +5,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YBVideoModel.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YBVideoPlayControllerViewController : UIViewController
+@interface YBVideoPlayControllerViewController : BaseViewController
 
 @property (nonatomic, strong) YBVideoModel * videoInfo;
 

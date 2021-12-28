@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *videoAuthor;
 @property (nonatomic, copy, nullable) NSString *videoUploadTime;
 @property (nonatomic, copy, nullable) NSString *videoFavorites;
+@property (nonatomic, copy, nullable) NSString *videoDesc;
+@property (nonatomic, copy, nullable) NSString *videoComments;
 
 @end
 

@@ -104,10 +104,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    YBVideoPlayControllerViewController *videoController = [[YBVideoPlayControllerViewController alloc] initWithNibName: @"YBVideoPlayControllerViewController" bundle:nil];
+    self.tabBarController.tabBar.hidden=YES;
+    YBVideoPlayControllerViewController *videoController = [[YBVideoPlayControllerViewController alloc] init];
     YBVideoModel *videoInfo = [self.videoList objectAtIndex:(indexPath.row)];
+    videoController.hidesBottomBarWhenPushed = true;
     videoController.videoInfo = videoInfo;
     [self.navigationController pushViewController:videoController animated:YES];
+    self.tabBarController.tabBar.hidden=NO;
 }
 
 /*

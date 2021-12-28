@@ -38,6 +38,22 @@
 		A847DA67276C932D001D1EBC /* OCGumbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A847DA58276C932D001D1EBC /* OCGumbo.m */; };
 		A8515F96275E39AB005A2E48 /* SJDYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8515F94275E39AB005A2E48 /* SJDYMainViewController.m */; };
 		A85B23CC276DB58E00167DCC /* YBVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A85B23CB276DB58E00167DCC /* YBVideoModel.m */; };
+		A85CF7902779C1F2000DF367 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF78F2779C1F2000DF367 /* BaseViewController.m */; };
+		A85CF7A12779D3E3000DF367 /* AwemeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7922779D3E3000DF367 /* AwemeListCell.m */; };
+		A85CF7A22779D3E3000DF367 /* CircleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7942779D3E3000DF367 /* CircleTextView.m */; };
+		A85CF7A32779D3E3000DF367 /* SharePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7972779D3E3000DF367 /* SharePopView.m */; };
+		A85CF7A42779D3E3000DF367 /* FavoriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7982779D3E3000DF367 /* FavoriteView.m */; };
+		A85CF7A52779D3E3000DF367 /* FocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF79A2779D3E3000DF367 /* FocusView.m */; };
+		A85CF7A62779D3E3000DF367 /* CommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF79C2779D3E3000DF367 /* CommentsPopView.m */; };
+		A85CF7A72779D3E3000DF367 /* HoverTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF79E2779D3E3000DF367 /* HoverTextView.m */; };
+		A85CF7A82779D3E3000DF367 /* MusicAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7A02779D3E3000DF367 /* MusicAlbumView.m */; };
+		A85CF7AA2779D460000DF367 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7A92779D460000DF367 /* NSString+Extension.m */; };
+		A85CF7AE2779D48A000DF367 /* NSNotification+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */; };
+		A85CF7AF2779D55A000DF367 /* NSNotification+Extension.h in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */; };
+		A85CF7B02779D55A000DF367 /* NSString+URLEncode.h in Sources */ = {isa = PBXBuildFile; fileRef = A85FD3C82776B14200E91A26 /* NSString+URLEncode.h */; };
+		A85CF7B12779D55A000DF367 /* NSString+Extension.h in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AB2779D477000DF367 /* NSString+Extension.h */; };
+		A85CF7B42779D5A8000DF367 /* NSAttributedString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */; };
+		A85CF7B72779D627000DF367 /* MenuPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7B62779D627000DF367 /* MenuPopView.m */; };
 		A85FD3C92776B14200E91A26 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = A85FD3C72776B14200E91A26 /* NSString+URLEncode.m */; };
 		A876854E275B6BB20053EE9B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A876854C275B6BB20053EE9B /* SettingViewController.m */; };
 		A8768554275B6C230053EE9B /* CacheSizeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8768550275B6C230053EE9B /* CacheSizeLabel.m */; };
@@ -130,6 +146,32 @@
 		A85B23C8276DB10E00167DCC /* YBSourceURLs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBSourceURLs.h; sourceTree = "<group>"; };
 		A85B23CA276DB58E00167DCC /* YBVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBVideoModel.h; sourceTree = "<group>"; };
 		A85B23CB276DB58E00167DCC /* YBVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBVideoModel.m; sourceTree = "<group>"; };
+		A85CF78E2779C1F2000DF367 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A85CF78F2779C1F2000DF367 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A85CF7912779D3E3000DF367 /* CircleTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTextView.h; sourceTree = "<group>"; };
+		A85CF7922779D3E3000DF367 /* AwemeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwemeListCell.m; sourceTree = "<group>"; };
+		A85CF7932779D3E3000DF367 /* SharePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePopView.h; sourceTree = "<group>"; };
+		A85CF7942779D3E3000DF367 /* CircleTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleTextView.m; sourceTree = "<group>"; };
+		A85CF7952779D3E3000DF367 /* FocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusView.h; sourceTree = "<group>"; };
+		A85CF7962779D3E3000DF367 /* AwemeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwemeListCell.h; sourceTree = "<group>"; };
+		A85CF7972779D3E3000DF367 /* SharePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePopView.m; sourceTree = "<group>"; };
+		A85CF7982779D3E3000DF367 /* FavoriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteView.m; sourceTree = "<group>"; };
+		A85CF7992779D3E3000DF367 /* MusicAlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicAlbumView.h; sourceTree = "<group>"; };
+		A85CF79A2779D3E3000DF367 /* FocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusView.m; sourceTree = "<group>"; };
+		A85CF79B2779D3E3000DF367 /* HoverTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTextView.h; sourceTree = "<group>"; };
+		A85CF79C2779D3E3000DF367 /* CommentsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsPopView.m; sourceTree = "<group>"; };
+		A85CF79D2779D3E3000DF367 /* FavoriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteView.h; sourceTree = "<group>"; };
+		A85CF79E2779D3E3000DF367 /* HoverTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTextView.m; sourceTree = "<group>"; };
+		A85CF79F2779D3E3000DF367 /* CommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsPopView.h; sourceTree = "<group>"; };
+		A85CF7A02779D3E3000DF367 /* MusicAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicAlbumView.m; sourceTree = "<group>"; };
+		A85CF7A92779D460000DF367 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		A85CF7AB2779D477000DF367 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Extension.h"; sourceTree = "<group>"; };
+		A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Extension.m"; sourceTree = "<group>"; };
+		A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extension.m"; sourceTree = "<group>"; };
+		A85CF7B32779D5A8000DF367 /* NSAttributedString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extension.h"; sourceTree = "<group>"; };
+		A85CF7B52779D627000DF367 /* MenuPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPopView.h; sourceTree = "<group>"; };
+		A85CF7B62779D627000DF367 /* MenuPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPopView.m; sourceTree = "<group>"; };
 		A85FD3C72776B14200E91A26 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "../../../../NSString-URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
 		A85FD3C82776B14200E91A26 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "../../../../NSString-URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
 		A8680A5227576F0C00B5B6D4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -290,6 +332,8 @@
 		A81CEC832730279C0027926E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A85CF78E2779C1F2000DF367 /* BaseViewController.h */,
+				A85CF78F2779C1F2000DF367 /* BaseViewController.m */,
 				A8515F95275E39AB005A2E48 /* SJDYMainViewController.h */,
 				A8515F94275E39AB005A2E48 /* SJDYMainViewController.m */,
 				A81CEC7D272EF2DB0027926E /* YBMainViewControllerTableViewController.h */,
@@ -306,6 +350,24 @@
 				A888AD60275A171D00542919 /* YBVideoPlayControllerViewController.xib */,
 				A81CEC86273028BA0027926E /* YBMainTableViewCell.h */,
 				A81CEC87273028BA0027926E /* YBMainTableViewCell.m */,
+				A85CF7962779D3E3000DF367 /* AwemeListCell.h */,
+				A85CF7922779D3E3000DF367 /* AwemeListCell.m */,
+				A85CF7912779D3E3000DF367 /* CircleTextView.h */,
+				A85CF7B52779D627000DF367 /* MenuPopView.h */,
+				A85CF7B62779D627000DF367 /* MenuPopView.m */,
+				A85CF7942779D3E3000DF367 /* CircleTextView.m */,
+				A85CF79F2779D3E3000DF367 /* CommentsPopView.h */,
+				A85CF79C2779D3E3000DF367 /* CommentsPopView.m */,
+				A85CF79D2779D3E3000DF367 /* FavoriteView.h */,
+				A85CF7982779D3E3000DF367 /* FavoriteView.m */,
+				A85CF7952779D3E3000DF367 /* FocusView.h */,
+				A85CF79A2779D3E3000DF367 /* FocusView.m */,
+				A85CF79B2779D3E3000DF367 /* HoverTextView.h */,
+				A85CF79E2779D3E3000DF367 /* HoverTextView.m */,
+				A85CF7992779D3E3000DF367 /* MusicAlbumView.h */,
+				A85CF7A02779D3E3000DF367 /* MusicAlbumView.m */,
+				A85CF7932779D3E3000DF367 /* SharePopView.h */,
+				A85CF7972779D3E3000DF367 /* SharePopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,8 +461,14 @@
 		A85B23C6276DB07500167DCC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A85CF7B32779D5A8000DF367 /* NSAttributedString+Extension.h */,
+				A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */,
+				A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */,
+				A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */,
 				A85FD3C82776B14200E91A26 /* NSString+URLEncode.h */,
 				A85FD3C72776B14200E91A26 /* NSString+URLEncode.m */,
+				A85CF7A92779D460000DF367 /* NSString+Extension.m */,
+				A85CF7AB2779D477000DF367 /* NSString+Extension.h */,
 				A85B23C7276DB0E700167DCC /* Definies */,
 			);
 			path = Common;
@@ -676,29 +744,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85CF7AF2779D55A000DF367 /* NSNotification+Extension.h in Sources */,
+				A85CF7B02779D55A000DF367 /* NSString+URLEncode.h in Sources */,
+				A85CF7B12779D55A000DF367 /* NSString+Extension.h in Sources */,
 				A847DA67276C932D001D1EBC /* OCGumbo.m in Sources */,
+				A85CF7A52779D3E3000DF367 /* FocusView.m in Sources */,
 				A847DA5F276C932D001D1EBC /* utf8.c in Sources */,
 				A847DA5A276C932D001D1EBC /* util.c in Sources */,
 				A81CEC88273028BA0027926E /* YBMainTableViewCell.m in Sources */,
 				A847DA64276C932D001D1EBC /* tokenizer.c in Sources */,
 				A85FD3C92776B14200E91A26 /* NSString+URLEncode.m in Sources */,
+				A85CF7AA2779D460000DF367 /* NSString+Extension.m in Sources */,
+				A85CF7A32779D3E3000DF367 /* SharePopView.m in Sources */,
+				A85CF7A72779D3E3000DF367 /* HoverTextView.m in Sources */,
 				A847DA5C276C932D001D1EBC /* vector.c in Sources */,
 				A85B23CC276DB58E00167DCC /* YBVideoModel.m in Sources */,
+				A85CF7B72779D627000DF367 /* MenuPopView.m in Sources */,
 				A81CEC48272EE8990027926E /* AppDelegate.m in Sources */,
+				A85CF7B42779D5A8000DF367 /* NSAttributedString+Extension.m in Sources */,
 				A8515F96275E39AB005A2E48 /* SJDYMainViewController.m in Sources */,
+				A85CF7AE2779D48A000DF367 /* NSNotification+Extension.m in Sources */,
 				A847DA5E276C932D001D1EBC /* char_ref.c in Sources */,
 				A847DA66276C932D001D1EBC /* OCGumbo+Query.m in Sources */,
 				A81CEC59272EE89B0027926E /* main.m in Sources */,
+				A85CF7A22779D3E3000DF367 /* CircleTextView.m in Sources */,
 				A81CEC7F272EF2DB0027926E /* YBMainViewControllerTableViewController.m in Sources */,
+				A85CF7A42779D3E3000DF367 /* FavoriteView.m in Sources */,
 				A847DA5D276C932D001D1EBC /* attribute.c in Sources */,
 				A888AD61275A171D00542919 /* YBVideoPlayControllerViewController.m in Sources */,
 				A847DA60276C932D001D1EBC /* error.c in Sources */,
 				A81CEC4B272EE8990027926E /* SceneDelegate.m in Sources */,
 				A847DA59276C932D001D1EBC /* string_buffer.c in Sources */,
+				A85CF7902779C1F2000DF367 /* BaseViewController.m in Sources */,
 				A876854E275B6BB20053EE9B /* SettingViewController.m in Sources */,
+				A85CF7A12779D3E3000DF367 /* AwemeListCell.m in Sources */,
+				A85CF7A82779D3E3000DF367 /* MusicAlbumView.m in Sources */,
 				A8768555275B6C230053EE9B /* CacheSizeLabel+Manager.m in Sources */,
 				A847DA62276C932D001D1EBC /* tag.c in Sources */,
 				A847DA65276C932D001D1EBC /* string_piece.c in Sources */,
+				A85CF7A62779D3E3000DF367 /* CommentsPopView.m in Sources */,
 				A847DA63276C932D001D1EBC /* parser.c in Sources */,
 				A8768554275B6C230053EE9B /* CacheSizeLabel.m in Sources */,
 				A81E036E276DCDD2001C3396 /* YB91VideoViewModel.m in Sources */,

@@ -115,7 +115,7 @@
 //
 //    }];
     
-    [_authorName setText:info.videoAuthor];
+    [_authorName setText:info.videoDesc];
 }
 
 @end

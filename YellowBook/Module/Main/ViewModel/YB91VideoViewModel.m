@@ -124,12 +124,12 @@
         NSRange timeStart = [videoContent rangeOfString:@"添加时间"];
         NSRange authorStart = [videoContent rangeOfString:@"作者:"];
         NSRange viewStart = [videoContent rangeOfString:@"查看:"];
-        NSRange favStart = [videoContent rangeOfString:@"收藏"];
-        NSRange commentStart = [videoContent rangeOfString:@"留言"];
+        NSRange favStart = [videoContent rangeOfString:@"收藏:"];
+        NSRange commentStart = [videoContent rangeOfString:@"留言:"];
         NSRange jifen = [videoContent rangeOfString:@"积分"];
         
         NSString *duration = [videoContent substringToIndex: titleStart.location];
-        duration = [duration stringByReplacingOccurrencesOfString:@"HD91" withString:@""];
+        duration = [duration stringByReplacingOccurrencesOfString:@"HD" withString:@""];
         duration = [duration stringByReplacingOccurrencesOfString:@"91" withString:@""];
         NSString *addTime = [videoContent substringWithRange:NSMakeRange(timeStart.location, authorStart.location - timeStart.location)];
         addTime = [addTime stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -139,9 +139,16 @@
         author = [author stringByReplacingOccurrencesOfString:@" " withString:@""];
         NSString *fav = [videoContent substringWithRange:NSMakeRange(favStart.location, commentStart.location - favStart.location)];
         NSString *comment = [videoContent substringWithRange:NSMakeRange(commentStart.location, jifen.location - commentStart.location)];
+        NSString *commentNumber = [comment substringFromIndex: [comment rangeOfString: @"留言:"].location + 3];
         NSString *views = [videoContent substringWithRange:NSMakeRange(viewStart.location, favStart.location - viewStart.location)];
+        NSString *favNumber = [fav substringFromIndex: [fav rangeOfString: @"收藏:"].location + 3];
+        
+        videoModel.videoFavorites = [favNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+        videoModel.videoComments = commentNumber;
+        videoModel.videoAuthor = author;
+        
         videoContent = [NSString stringWithFormat:@"%@\t时长: %@\t%@\n%@\t%@ %@", author, duration, views, addTime, fav, comment];
-        videoModel.videoAuthor = videoContent;
+        videoModel.videoDesc = videoContent;
         [videoArray addObject:videoModel];
     }
     return videoArray;
