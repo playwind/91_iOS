@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "../View/CacheSizeLabel+Manager.h"
+#import "YBPreferenceManager.h"
 
 @interface SettingViewController ()
 
@@ -37,6 +38,12 @@
     } else if (indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/playwind/YellowBook"] options:nil completionHandler:nil];
     }
+}
+- (IBAction)showFloatWindow:(id)sender {
+    UISwitch *switchButton = (UISwitch*)sender;
+    BOOL isOn = [switchButton isOn];
+    YBPreferenceManager *preferenceManager = YBPreferenceManager.new;
+    [preferenceManager setShowFloatWindowOnBack:isOn];
 }
 
 @end

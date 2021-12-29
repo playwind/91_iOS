@@ -130,8 +130,36 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zqF-Cj-rNZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rzt-JY-IbQ">
                                         <rect key="frame" x="0.0" y="66" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rzt-JY-IbQ" id="XOr-GV-ddV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出播放页后悬浮播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvL-XB-d6X">
+                                                    <rect key="frame" x="15" y="12" width="164" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LYy-lT-A1P">
+                                                    <rect key="frame" x="182" y="6" width="49" height="31"/>
+                                                    <connections>
+                                                        <action selector="showFloatWindow:" destination="c6A-kc-cQf" eventType="valueChanged" id="vAs-Tk-gtn"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LYy-lT-A1P" firstAttribute="centerY" secondItem="XOr-GV-ddV" secondAttribute="centerY" id="24F-BZ-ZlG"/>
+                                                <constraint firstItem="tvL-XB-d6X" firstAttribute="centerY" secondItem="XOr-GV-ddV" secondAttribute="centerY" id="e3B-4R-Pgg"/>
+                                                <constraint firstAttribute="trailing" secondItem="LYy-lT-A1P" secondAttribute="trailing" constant="15" id="mZp-AD-8hU"/>
+                                                <constraint firstItem="tvL-XB-d6X" firstAttribute="leading" secondItem="XOr-GV-ddV" secondAttribute="leading" constant="15" id="ohu-Vf-kLO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zqF-Cj-rNZ">
+                                        <rect key="frame" x="0.0" y="110" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zqF-Cj-rNZ" id="yI8-KT-HkH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

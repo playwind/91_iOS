@@ -47,11 +47,6 @@
 		A85CF7A62779D3E3000DF367 /* CommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF79C2779D3E3000DF367 /* CommentsPopView.m */; };
 		A85CF7A72779D3E3000DF367 /* HoverTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF79E2779D3E3000DF367 /* HoverTextView.m */; };
 		A85CF7A82779D3E3000DF367 /* MusicAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7A02779D3E3000DF367 /* MusicAlbumView.m */; };
-		A85CF7AA2779D460000DF367 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7A92779D460000DF367 /* NSString+Extension.m */; };
-		A85CF7AE2779D48A000DF367 /* NSNotification+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */; };
-		A85CF7AF2779D55A000DF367 /* NSNotification+Extension.h in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */; };
-		A85CF7B12779D55A000DF367 /* NSString+Extension.h in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7AB2779D477000DF367 /* NSString+Extension.h */; };
-		A85CF7B42779D5A8000DF367 /* NSAttributedString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */; };
 		A85CF7B72779D627000DF367 /* MenuPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF7B62779D627000DF367 /* MenuPopView.m */; };
 		A864157C277B10180072C9F4 /* SJFloatSmallViewTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864157A277B10180072C9F4 /* SJFloatSmallViewTransitionController.m */; };
 		A876854E275B6BB20053EE9B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A876854C275B6BB20053EE9B /* SettingViewController.m */; };
@@ -60,6 +55,10 @@
 		A888AD61275A171D00542919 /* YBVideoPlayControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A888AD5F275A171D00542919 /* YBVideoPlayControllerViewController.m */; };
 		A888AD62275A171D00542919 /* YBVideoPlayControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A888AD60275A171D00542919 /* YBVideoPlayControllerViewController.xib */; };
 		A8E34798277BEF500028B092 /* YBPreferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E34797277BEF500028B092 /* YBPreferenceManager.m */; };
+		A8E3479F277C11970028B092 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E3479B277C11970028B092 /* NSString+Extension.m */; };
+		A8E347A0277C11970028B092 /* NSNotification+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E3479C277C11970028B092 /* NSNotification+Extension.m */; };
+		A8E347A1277C11970028B092 /* NSAttributedString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E3479E277C11970028B092 /* NSAttributedString+Extension.m */; };
+		A8E347A4277C11E20028B092 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E347A2277C11E20028B092 /* NSString+URLEncode.m */; };
 		DD38CF9258FC2DCECA588E89 /* Pods_YellowBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6D07D4871C28857330F693 /* Pods_YellowBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,19 +163,11 @@
 		A85CF79E2779D3E3000DF367 /* HoverTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTextView.m; sourceTree = "<group>"; };
 		A85CF79F2779D3E3000DF367 /* CommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsPopView.h; sourceTree = "<group>"; };
 		A85CF7A02779D3E3000DF367 /* MusicAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicAlbumView.m; sourceTree = "<group>"; };
-		A85CF7A92779D460000DF367 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		A85CF7AB2779D477000DF367 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
-		A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Extension.h"; sourceTree = "<group>"; };
-		A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Extension.m"; sourceTree = "<group>"; };
-		A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extension.m"; sourceTree = "<group>"; };
-		A85CF7B32779D5A8000DF367 /* NSAttributedString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extension.h"; sourceTree = "<group>"; };
 		A85CF7B52779D627000DF367 /* MenuPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPopView.h; sourceTree = "<group>"; };
 		A85CF7B62779D627000DF367 /* MenuPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPopView.m; sourceTree = "<group>"; };
 		A864157A277B10180072C9F4 /* SJFloatSmallViewTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJFloatSmallViewTransitionController.m; sourceTree = "<group>"; };
 		A864157B277B10180072C9F4 /* SJFloatSmallViewTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJFloatSmallViewTransitionController.h; sourceTree = "<group>"; };
 		A8680A5227576F0C00B5B6D4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		A86E1889277BEE720009105D /* NSString+URLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
-		A86E188A277BEE720009105D /* NSString+URLEncode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		A876854C275B6BB20053EE9B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		A876854D275B6BB20053EE9B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		A8768550275B6C230053EE9B /* CacheSizeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheSizeLabel.m; sourceTree = "<group>"; };
@@ -188,6 +179,14 @@
 		A888AD60275A171D00542919 /* YBVideoPlayControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YBVideoPlayControllerViewController.xib; sourceTree = "<group>"; };
 		A8E34796277BEF500028B092 /* YBPreferenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPreferenceManager.h; sourceTree = "<group>"; };
 		A8E34797277BEF500028B092 /* YBPreferenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPreferenceManager.m; sourceTree = "<group>"; };
+		A8E34799277C11970028B092 /* NSAttributedString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extension.h"; sourceTree = "<group>"; };
+		A8E3479A277C11970028B092 /* NSNotification+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Extension.h"; sourceTree = "<group>"; };
+		A8E3479B277C11970028B092 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		A8E3479C277C11970028B092 /* NSNotification+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Extension.m"; sourceTree = "<group>"; };
+		A8E3479D277C11970028B092 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		A8E3479E277C11970028B092 /* NSAttributedString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extension.m"; sourceTree = "<group>"; };
+		A8E347A2277C11E20028B092 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		A8E347A3277C11E20028B092 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		BCBD38556795E8FAB66C0608 /* Pods-YellowBook-YellowBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YellowBook-YellowBookUITests.release.xcconfig"; path = "Target Support Files/Pods-YellowBook-YellowBookUITests/Pods-YellowBook-YellowBookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD680F5F24AC75067C3AF645 /* Pods_YellowBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YellowBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CFACEA9C921F6280462178 /* Pods-YellowBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YellowBookTests.debug.xcconfig"; path = "Target Support Files/Pods-YellowBookTests/Pods-YellowBookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -467,9 +466,9 @@
 		A85B23C6276DB07500167DCC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A8E347A5277C122F0028B092 /* extends */,
 				A8E34796277BEF500028B092 /* YBPreferenceManager.h */,
 				A8E34797277BEF500028B092 /* YBPreferenceManager.m */,
-				A86E1888277BEE640009105D /* extends */,
 				A85B23C7276DB0E700167DCC /* Definies */,
 			);
 			path = Common;
@@ -481,21 +480,6 @@
 				A85B23C8276DB10E00167DCC /* YBSourceURLs.h */,
 			);
 			path = Definies;
-			sourceTree = "<group>";
-		};
-		A86E1888277BEE640009105D /* extends */ = {
-			isa = PBXGroup;
-			children = (
-				A85CF7B32779D5A8000DF367 /* NSAttributedString+Extension.h */,
-				A85CF7B22779D5A8000DF367 /* NSAttributedString+Extension.m */,
-				A85CF7AC2779D48A000DF367 /* NSNotification+Extension.h */,
-				A85CF7AD2779D48A000DF367 /* NSNotification+Extension.m */,
-				A86E1889277BEE720009105D /* NSString+URLEncode.h */,
-				A86E188A277BEE720009105D /* NSString+URLEncode.m */,
-				A85CF7A92779D460000DF367 /* NSString+Extension.m */,
-				A85CF7AB2779D477000DF367 /* NSString+Extension.h */,
-			);
-			path = extends;
 			sourceTree = "<group>";
 		};
 		A876854B275B6B1F0053EE9B /* Controller */ = {
@@ -516,6 +500,21 @@
 				A8768552275B6C230053EE9B /* CacheSizeLabel+Manager.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A8E347A5277C122F0028B092 /* extends */ = {
+			isa = PBXGroup;
+			children = (
+				A8E347A3277C11E20028B092 /* NSString+URLEncode.h */,
+				A8E347A2277C11E20028B092 /* NSString+URLEncode.m */,
+				A8E34799277C11970028B092 /* NSAttributedString+Extension.h */,
+				A8E3479E277C11970028B092 /* NSAttributedString+Extension.m */,
+				A8E3479A277C11970028B092 /* NSNotification+Extension.h */,
+				A8E3479C277C11970028B092 /* NSNotification+Extension.m */,
+				A8E3479D277C11970028B092 /* NSString+Extension.h */,
+				A8E3479B277C11970028B092 /* NSString+Extension.m */,
+			);
+			path = extends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -760,25 +759,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85CF7AF2779D55A000DF367 /* NSNotification+Extension.h in Sources */,
-				A85CF7B12779D55A000DF367 /* NSString+Extension.h in Sources */,
 				A847DA67276C932D001D1EBC /* OCGumbo.m in Sources */,
 				A85CF7A52779D3E3000DF367 /* FocusView.m in Sources */,
 				A847DA5F276C932D001D1EBC /* utf8.c in Sources */,
 				A847DA5A276C932D001D1EBC /* util.c in Sources */,
+				A8E347A0277C11970028B092 /* NSNotification+Extension.m in Sources */,
 				A81CEC88273028BA0027926E /* YBMainTableViewCell.m in Sources */,
 				A864157C277B10180072C9F4 /* SJFloatSmallViewTransitionController.m in Sources */,
 				A847DA64276C932D001D1EBC /* tokenizer.c in Sources */,
-				A85CF7AA2779D460000DF367 /* NSString+Extension.m in Sources */,
 				A85CF7A32779D3E3000DF367 /* SharePopView.m in Sources */,
 				A85CF7A72779D3E3000DF367 /* HoverTextView.m in Sources */,
 				A847DA5C276C932D001D1EBC /* vector.c in Sources */,
 				A85B23CC276DB58E00167DCC /* YBVideoModel.m in Sources */,
 				A85CF7B72779D627000DF367 /* MenuPopView.m in Sources */,
 				A81CEC48272EE8990027926E /* AppDelegate.m in Sources */,
-				A85CF7B42779D5A8000DF367 /* NSAttributedString+Extension.m in Sources */,
 				A8515F96275E39AB005A2E48 /* SJDYMainViewController.m in Sources */,
-				A85CF7AE2779D48A000DF367 /* NSNotification+Extension.m in Sources */,
+				A8E347A4277C11E20028B092 /* NSString+URLEncode.m in Sources */,
 				A847DA5E276C932D001D1EBC /* char_ref.c in Sources */,
 				A847DA66276C932D001D1EBC /* OCGumbo+Query.m in Sources */,
 				A81CEC59272EE89B0027926E /* main.m in Sources */,
@@ -790,12 +786,14 @@
 				A847DA60276C932D001D1EBC /* error.c in Sources */,
 				A81CEC4B272EE8990027926E /* SceneDelegate.m in Sources */,
 				A847DA59276C932D001D1EBC /* string_buffer.c in Sources */,
+				A8E3479F277C11970028B092 /* NSString+Extension.m in Sources */,
 				A85CF7902779C1F2000DF367 /* BaseViewController.m in Sources */,
 				A8E34798277BEF500028B092 /* YBPreferenceManager.m in Sources */,
 				A876854E275B6BB20053EE9B /* SettingViewController.m in Sources */,
 				A85CF7A12779D3E3000DF367 /* AwemeListCell.m in Sources */,
 				A85CF7A82779D3E3000DF367 /* MusicAlbumView.m in Sources */,
 				A8768555275B6C230053EE9B /* CacheSizeLabel+Manager.m in Sources */,
+				A8E347A1277C11970028B092 /* NSAttributedString+Extension.m in Sources */,
 				A847DA62276C932D001D1EBC /* tag.c in Sources */,
 				A847DA65276C932D001D1EBC /* string_piece.c in Sources */,
 				A85CF7A62779D3E3000DF367 /* CommentsPopView.m in Sources */,
