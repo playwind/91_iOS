@@ -105,8 +105,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.tabBarController.tabBar.hidden=YES;
-    YBVideoPlayControllerViewController *videoController = [[YBVideoPlayControllerViewController alloc] init];
     YBVideoModel *videoInfo = [self.videoList objectAtIndex:(indexPath.row)];
+    YBVideoPlayControllerViewController *videoController = [YBVideoPlayControllerViewController viewControllerWithVideoInfo: videoInfo];
     videoController.hidesBottomBarWhenPushed = true;
     videoController.videoInfo = videoInfo;
     [self.navigationController pushViewController:videoController animated:YES];

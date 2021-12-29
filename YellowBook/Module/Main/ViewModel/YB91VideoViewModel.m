@@ -60,9 +60,15 @@
     [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         //NSLog(@"response: %@", htmlString);
-        NSString *url = [self parseVideoURLFromHtml: htmlString];
-        if (success) {
-            success(url);
+        @try {
+            NSString *url = [self parseVideoURLFromHtml: htmlString];
+            if (success) {
+                success(url);
+            }
+        } @catch (NSException *exception) {
+            if (failure) {
+                failure(@"解析错误");
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {

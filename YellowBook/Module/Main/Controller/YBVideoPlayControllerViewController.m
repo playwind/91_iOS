@@ -7,12 +7,50 @@
 #import <SJVideoPlayer/SJVideoPlayer.h>
 #import "YB91VideoViewModel.h"
 #import "AwemeListCell.h"
+#import "SJFloatSmallViewTransitionController.h"
+#import "YBPreferenceManager.h"
 
 @interface YBVideoPlayControllerViewController ()
 @property (nonatomic, strong) SJVideoPlayer *player;
+@property BOOL showFloatWindow;
 @end
 
 @implementation YBVideoPlayControllerViewController
+
+// step 1
++ (instancetype)viewControllerWithVideoInfo:(YBVideoModel *)videoInfo {
+    YBVideoPlayControllerViewController *instance = nil;
+    YBPreferenceManager *preferenceManager = YBPreferenceManager.new;
+    BOOL showFloatWindow = [preferenceManager isShowFloatWindowOnBack];
+    if (showFloatWindow) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        
+        // compare videoId
+        for ( __kindof UIViewController *vc in window.SVTC_playbackInFloatingViewControllers ) {
+            if ( [vc isKindOfClass:YBVideoPlayControllerViewController.class] ) {
+                YBVideoPlayControllerViewController *playbackViewController = vc;
+                if ( playbackViewController.videoInfo == videoInfo ) {
+                    instance = playbackViewController;
+                    break;
+                }
+            }
+        }
+    }
+    
+    if ( instance == nil ) {
+        instance = [YBVideoPlayControllerViewController.alloc initWithVideoId:videoInfo];
+    }
+    instance.showFloatWindow = showFloatWindow;
+    return instance;
+}
+
+- (instancetype)initWithVideoId:(YBVideoModel *)videoInfo {
+    self = [super init];
+    if ( self ) {
+        _videoInfo = videoInfo;
+    }
+    return self;
+}
 
 - (void)getVideoUrl {
     [SVProgressHUD show];
@@ -21,8 +59,8 @@
             [SVProgressHUD dismiss];
             NSMutableDictionary * headers = [NSMutableDictionary dictionary];
             [headers setObject:@"https://www.91porn.com/" forKey:@"Referer"];
-            //NSString *url = TEST_VIDEO_URL;
-            NSString *url = videoURL;
+            NSString *url = TEST_VIDEO_URL;
+            //NSString *url = videoURL;
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
             [self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
         });
@@ -45,7 +83,20 @@
     [self initViews];
     _player.gestureControl.supportedGestureTypes |= SJPlayerGestureType_LongPress;
     _player.rateWhenLongPressGestureTriggered = 2.0;
+    _player.resumePlaybackWhenAppDidEnterForeground = YES;
     
+    if (_showFloatWindow) {
+        // step 2
+        _player.floatSmallViewController = SJFloatSmallViewTransitionController.alloc.init;
+        __weak typeof(self) _self = self;
+        _player.floatSmallViewController.doubleTappedOnTheFloatViewExeBlock = ^(id<SJFloatSmallViewController>  _Nonnull controller) {
+            __strong typeof(_self) self = _self;
+            if ( self == nil ) return;
+            self.player.isPaused ? [self.player play] : [self.player pause];
+        };
+        
+        [self _test];
+    }
 }
 
 - (void)initViews {
@@ -74,33 +125,53 @@
     [self getVideoUrl];
 }
 
+// step 3
+- (SJFloatSmallViewTransitionController *_Nullable)SVTC_floatSmallViewTransitionController {
+    return (SJFloatSmallViewTransitionController *)_player.floatSmallViewController;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 //    [(SJDYPlaybackListViewController *)self.pageViewController.focusedViewController playIfNeeded];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // step 4
+    _player.vc_isDisappeared = NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // step 5
+    _player.vc_isDisappeared = YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)_test {
+    _player.defaultFloatSmallViewControlLayer.bottomHeight = 35;
+    
+    SJEdgeControlButtonItem *playItem = [SJEdgeControlButtonItem.alloc initWithTag:101];
+    [playItem addAction:[SJEdgeControlButtonItemAction actionWithTarget:self action:@selector(playOrPause)]];
+    [_player.defaultFloatSmallViewControlLayer.bottomAdapter addItem:playItem];
+    __weak typeof(self) _self = self;
+    _player.playbackObserver.playbackStatusDidChangeExeBlock = ^(__kindof SJBaseVideoPlayer * _Nonnull player) {
+        __strong typeof(_self) self = _self;
+        if ( self == nil ) return;
+        [self _updatePlayItem];
+    };
+    [self _updatePlayItem];
 }
-*/
 
-- (void)applicationBecomeActive {
-
+- (void)_updatePlayItem {
+    SJEdgeControlButtonItem *playItem = [_player.defaultFloatSmallViewControlLayer.bottomAdapter itemForTag:101];
+    playItem.image = self.player.isPaused ? SJVideoPlayerConfigurations.shared.resources.playImage : SJVideoPlayerConfigurations.shared.resources.pauseImage;
+    [self.player.defaultFloatSmallViewControlLayer.bottomAdapter reload];
 }
 
-- (void)applicationEnterBackground {
-
+- (void)playOrPause {
+    self.player.isPaused ? [self.player play] : [self.player pauseForUser];
 }
 
 @end

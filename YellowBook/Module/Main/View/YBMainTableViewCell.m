@@ -105,9 +105,9 @@
 }
 
 - (void)setVideoInfo:(YBVideoModel *)info {
-    [_videoCovers sd_setImageWithURL: [NSURL URLWithString: info.videoCover] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-
-    }];
+//    [_videoCovers sd_setImageWithURL: [NSURL URLWithString: info.videoCover] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//
+//    }];
     
     [_videoTitle setText:info.videoTitle];
     

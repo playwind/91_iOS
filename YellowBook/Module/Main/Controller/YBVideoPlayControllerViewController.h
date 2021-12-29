@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) YBVideoModel * videoInfo;
 
++ (instancetype)viewControllerWithVideoInfo:(YBVideoModel *)videoInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
