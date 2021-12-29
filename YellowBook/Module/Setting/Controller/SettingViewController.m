@@ -13,6 +13,7 @@
 @interface SettingViewController ()
 
 @property (weak, nonatomic) IBOutlet CacheSizeLabel *cacheSizeLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *floatWindowSwitcher;
 
 @end
 
@@ -27,6 +28,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.cacheSizeLabel reloadCacheSize];
+    YBPreferenceManager *preferenceManager = YBPreferenceManager.new;
+    BOOL isOn = [preferenceManager isShowFloatWindowOnBack];
+    [self.floatWindowSwitcher setOn:isOn];
 }
 
 #pragma mark - TableView Delegate

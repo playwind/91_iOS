@@ -59,8 +59,8 @@
             [SVProgressHUD dismiss];
             NSMutableDictionary * headers = [NSMutableDictionary dictionary];
             [headers setObject:@"https://www.91porn.com/" forKey:@"Referer"];
-            NSString *url = TEST_VIDEO_URL;
-            //NSString *url = videoURL;
+            //NSString *url = TEST_VIDEO_URL;
+            NSString *url = videoURL;
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
             [self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
         });

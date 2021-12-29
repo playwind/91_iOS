@@ -189,6 +189,7 @@
                     <navigationItem key="navigationItem" title="设置" id="Qff-lK-gfT"/>
                     <connections>
                         <outlet property="cacheSizeLabel" destination="6g7-M4-oUf" id="T52-dC-4c2"/>
+                        <outlet property="floatWindowSwitcher" destination="LYy-lT-A1P" id="Bga-Oe-z7g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t31-0j-831" userLabel="First Responder" sceneMemberID="firstResponder"/>
