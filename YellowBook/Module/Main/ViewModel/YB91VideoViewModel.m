@@ -80,6 +80,10 @@
 - (NSString *) parseVideoURLFromHtml: (NSString *)htmlString {
     OCGumboDocument *document = [[OCGumboDocument alloc] initWithHTMLString: htmlString];
     OCQueryObject *videos = document.Query(@"video#player_one");
+    if(videos.count == 0) {
+        NSLog(@"没发现视频，作为游客每天只能观看15部视频");
+        return @"";
+    }
     NSString *url = videos.first().Query(@"script").first().html();
     NSRange start = [url rangeOfString:@"strencode2("];
     if (start.location == NSNotFound) {

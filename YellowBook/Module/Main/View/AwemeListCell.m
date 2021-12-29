@@ -158,10 +158,11 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     _focus = [FocusView new];
     [_container addSubview:_focus];
     
+    NSInteger videoHeight = ScreenWidth * 9 / 16;
     [_playerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.left.right.equalTo(self);
-        make.height.equalTo(@240);
+        make.height.mas_equalTo(videoHeight);
     }];
     
     [_container mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -225,7 +226,7 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
         make.centerX.equalTo(self.comment);
     }];
     [_favorite mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.comment.mas_top).inset(25);
+        make.bottom.equalTo(self.comment.mas_top).inset(50);
         make.right.equalTo(self).inset(10);
         make.width.mas_equalTo(50);
         make.height.mas_equalTo(45);
