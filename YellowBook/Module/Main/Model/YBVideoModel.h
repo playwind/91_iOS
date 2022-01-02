@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype) testItem;
 
 @property (nonatomic, copy) NSString *videoURL;
+@property (nonatomic, copy) NSString *videoID;
 @property (nonatomic, copy, nullable) NSString *videoPreviewURL;
 @property (nonatomic, copy, nullable) NSString *videoTitle;
 @property (nonatomic, copy, nullable) NSString *videoDuration;

@@ -284,7 +284,7 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 - (void)handleGesture:(UITapGestureRecognizer *)sender {
     switch (sender.view.tag) {
         case kAwemeListLikeCommentTag: {
-            CommentsPopView *popView = [[CommentsPopView alloc] initWithAwemeId:0];
+            CommentsPopView *popView = [[CommentsPopView alloc] initWithVideoId:_videoModel.videoID];
             [popView show];
             break;
         }

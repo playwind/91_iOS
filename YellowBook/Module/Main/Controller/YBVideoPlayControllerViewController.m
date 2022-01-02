@@ -54,6 +54,7 @@
 
 - (void)getVideoUrl {
     [SVProgressHUD show];
+    __weak typeof(self) _self = self;
     [[[YB91VideoViewModel alloc] init] parseVideoUrl:_videoInfo.videoURL success:^(NSString * _Nonnull videoURL) {
         dispatch_async(dispatch_get_main_queue(),   ^ {
             [SVProgressHUD dismiss];
@@ -62,7 +63,9 @@
             //NSString *url = TEST_VIDEO_URL;
             NSString *url = videoURL;
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
-            [self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
+            [_self.player setURLAsset: [[SJVideoPlayerURLAsset alloc] initWithAVAsset:asset]];
+            NSArray *strs = [url componentsSeparatedByString:@"/"];
+            _self.videoInfo.videoID = strs[strs.count - 2];
         });
     } failure:^(NSString * _Nonnull message) {
         NSLog(@"Error: %@", message);

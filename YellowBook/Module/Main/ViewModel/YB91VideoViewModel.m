@@ -52,12 +52,26 @@
     }];
 }
 
+-(int)getRandomNumber:(int)from to:(int)to{
+    //+1,result is [from to]; else is [from, to)
+    return (int)(from + (arc4random() % (to - from + 1)));
+}
+
+- (NSString *)getRandomIpAddress {
+    NSString *ipAddress = [NSString stringWithFormat:@"%d.%d.%d.%d",[self getRandomNumber:0 to:255], [self getRandomNumber:0 to:255], [self getRandomNumber:0 to:255], [self getRandomNumber:0 to:255]];
+    return ipAddress;
+}
+
 - (void) parseVideoUrl:(NSString *)url
                success:(void (^)(NSString *videoURL)) success
                failure:(void (^)(NSString *message)) failure {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSString *ipAddress = [self getRandomIpAddress];
+    NSLog(@"生成的随机ip地址为：%@", ipAddress);
+    [headers setObject:ipAddress forKey:@"X-Forwarded-For"];
+    [manager GET:url parameters:nil headers:headers progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         //NSLog(@"response: %@", htmlString);
         @try {

@@ -8,6 +8,7 @@
 
 #import "CommentsPopView.h"
 #import "MenuPopView.h"
+#import "YB91CommentViewModel.h"
 
 NSString * const kCommentListCell     = @"CommentListCell";
 NSString * const kCommentHeaderCell   = @"CommentHeaderCell";
@@ -15,22 +16,24 @@ NSString * const kCommentFooterCell   = @"CommentFooterCell";
 
 @interface CommentsPopView () <UITableViewDelegate,UITableViewDataSource, UIGestureRecognizerDelegate,UIScrollViewDelegate, CommentTextViewDelegate>
 
-@property (nonatomic, assign) NSString                         *awemeId;
+@property (nonatomic, assign) NSString                         *videoId;
 
 @property (nonatomic, assign) NSInteger                        pageIndex;
 @property (nonatomic, assign) NSInteger                        pageSize;
 
 @property (nonatomic, strong) UIView                           *container;
 @property (nonatomic, strong) UITableView                      *tableView;
-@property (nonatomic, strong) NSMutableArray<Comment *>        *data;
+@property (nonatomic, strong) NSMutableArray<YBCommentModel *>        *data;
 @property (nonatomic, strong) CommentTextView                  *textView;
+
+@property (nonatomic, strong) YB91CommentViewModel *viewModel;
 
 @end
 
 
 @implementation CommentsPopView
 
-- (instancetype)initWithAwemeId:(NSString *)awemeId {
+- (instancetype)initWithVideoId:(NSString *)videoId {
     self = [super init];
     if (self) {
         self.frame = ScreenFrame;
@@ -38,10 +41,10 @@ NSString * const kCommentFooterCell   = @"CommentFooterCell";
         tapGestureRecognizer.delegate = self;
         [self addGestureRecognizer:tapGestureRecognizer];
         
-        _awemeId = awemeId;
-        
-        _pageIndex = 0;
+        _videoId = videoId;
+        _pageIndex = 1;
         _pageSize = 20;
+        _viewModel = [[YB91CommentViewModel alloc] initWithVideoId:_videoId];
         
         _data = [NSMutableArray array];
         
@@ -142,7 +145,7 @@ NSString * const kCommentFooterCell   = @"CommentFooterCell";
 }
 
 //delete comment
-- (void)deleteComment:(Comment *)comment {
+- (void)deleteComment:(YBCommentModel *)comment {
     __weak __typeof(self) wself = self;
 }
 
@@ -202,6 +205,24 @@ NSString * const kCommentFooterCell   = @"CommentFooterCell";
 //load data
 - (void)loadData:(NSInteger)pageIndex pageSize:(NSInteger)pageSize {
     __weak __typeof(self) wself = self;
+    [_viewModel loadDataWithIndex:pageIndex success:^(NSArray<YBCommentModel *> * _Nonnull commentArray) {
+        wself.pageIndex++;
+        
+        [UIView setAnimationsEnabled:NO];
+        [wself.tableView beginUpdates];
+        [wself.data addObjectsFromArray:commentArray];
+        NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+        for(NSInteger row = wself.data.count - commentArray.count; row<wself.data.count; row++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+            [indexPaths addObject:indexPath];
+        }
+        [wself.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+        [wself.tableView endUpdates];
+        [UIView setAnimationsEnabled:YES];
+        wself.label.text = [NSString stringWithFormat:@"%ld条评论",(long)commentArray.count];
+    } failure:^(NSString * _Nonnull message) {
+        NSLog(@"%@", message);
+    }];
     
 }
 
@@ -306,12 +327,21 @@ NSString * const kCommentFooterCell   = @"CommentFooterCell";
     return self;
 }
 
--(void)initData:(Comment *)comment {
-    NSURL *avatarUrl;
+-(void)initData:(YBCommentModel *)comment {
+    _nickName.text = comment.commentTitle;
     
+    __weak __typeof(self) wself = self;
+//    avatarUrl = [NSURL URLWithString:comment.user.avatar_thumb.url_list.firstObject];
+//    [_avatar setImageWithURL:avatarUrl completedBlock:^(UIImage *image, NSError *error) {
+//        image = [image drawCircleImage];
+//        wself.avatar.image = image;
+//    }];
+    _content.text = comment.commentContent;
+    //_date.text = [NSDate formatTime:comment.create_time];
+    //_likeNum.text = [NSString formatCount:comment.digg_count];
 }
 
-+(CGFloat)cellHeight:(Comment *)comment {
++(CGFloat)cellHeight:(YBCommentModel *)comment {
     return 30;
 }
 @end

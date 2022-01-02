@@ -13,14 +13,14 @@
 @property (nonatomic, strong) UILabel           *label;
 @property (nonatomic, strong) UIImageView       *close;
 
-- (instancetype)initWithAwemeId:(NSString *)awemeId;
+- (instancetype)initWithVideoId:(NSString *)videoId;
 - (void)show;
 - (void)dismiss;
 
 @end
 
 
-@class Comment;
+@class YBCommentModel;
 @interface CommentListCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView        *avatar;
@@ -32,8 +32,8 @@
 @property (nonatomic, strong) UILabel            *date;
 @property (nonatomic, strong) UIView             *splitLine;
 
--(void)initData:(Comment *)comment;
-+(CGFloat)cellHeight:(Comment *)comment;
+-(void)initData:(YBCommentModel *)comment;
++(CGFloat)cellHeight:(YBCommentModel *)comment;
 
 @end
 

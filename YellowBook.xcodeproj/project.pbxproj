@@ -36,6 +36,8 @@
 		A847DA65276C932D001D1EBC /* string_piece.c in Sources */ = {isa = PBXBuildFile; fileRef = A847DA53276C932D001D1EBC /* string_piece.c */; };
 		A847DA66276C932D001D1EBC /* OCGumbo+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = A847DA57276C932D001D1EBC /* OCGumbo+Query.m */; };
 		A847DA67276C932D001D1EBC /* OCGumbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A847DA58276C932D001D1EBC /* OCGumbo.m */; };
+		A84AB47A27804C19009FEFAD /* YB91CommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A84AB47827804C19009FEFAD /* YB91CommentViewModel.m */; };
+		A84AB47D27805336009FEFAD /* YBCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A84AB47C27805336009FEFAD /* YBCommentModel.m */; };
 		A8515F96275E39AB005A2E48 /* SJDYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8515F94275E39AB005A2E48 /* SJDYMainViewController.m */; };
 		A85B23CC276DB58E00167DCC /* YBVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A85B23CB276DB58E00167DCC /* YBVideoModel.m */; };
 		A85CF7902779C1F2000DF367 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CF78F2779C1F2000DF367 /* BaseViewController.m */; };
@@ -140,6 +142,10 @@
 		A847DA56276C932D001D1EBC /* OCGumbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCGumbo.h; sourceTree = "<group>"; };
 		A847DA57276C932D001D1EBC /* OCGumbo+Query.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCGumbo+Query.m"; sourceTree = "<group>"; };
 		A847DA58276C932D001D1EBC /* OCGumbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCGumbo.m; sourceTree = "<group>"; };
+		A84AB47827804C19009FEFAD /* YB91CommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YB91CommentViewModel.m; sourceTree = "<group>"; };
+		A84AB47927804C19009FEFAD /* YB91CommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YB91CommentViewModel.h; sourceTree = "<group>"; };
+		A84AB47B27805336009FEFAD /* YBCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCommentModel.h; sourceTree = "<group>"; };
+		A84AB47C27805336009FEFAD /* YBCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCommentModel.m; sourceTree = "<group>"; };
 		A8515F94275E39AB005A2E48 /* SJDYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDYMainViewController.m; sourceTree = "<group>"; };
 		A8515F95275E39AB005A2E48 /* SJDYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDYMainViewController.h; sourceTree = "<group>"; };
 		A85B23C8276DB10E00167DCC /* YBSourceURLs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBSourceURLs.h; sourceTree = "<group>"; };
@@ -389,6 +395,8 @@
 		A81E036B276DCC98001C3396 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A84AB47927804C19009FEFAD /* YB91CommentViewModel.h */,
+				A84AB47827804C19009FEFAD /* YB91CommentViewModel.m */,
 				A81E036C276DCDD2001C3396 /* YB91VideoViewModel.h */,
 				A81E036D276DCDD2001C3396 /* YB91VideoViewModel.m */,
 			);
@@ -459,6 +467,8 @@
 			children = (
 				A85B23CA276DB58E00167DCC /* YBVideoModel.h */,
 				A85B23CB276DB58E00167DCC /* YBVideoModel.m */,
+				A84AB47B27805336009FEFAD /* YBCommentModel.h */,
+				A84AB47C27805336009FEFAD /* YBCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -780,6 +790,7 @@
 				A81CEC59272EE89B0027926E /* main.m in Sources */,
 				A85CF7A22779D3E3000DF367 /* CircleTextView.m in Sources */,
 				A81CEC7F272EF2DB0027926E /* YBMainViewControllerTableViewController.m in Sources */,
+				A84AB47D27805336009FEFAD /* YBCommentModel.m in Sources */,
 				A85CF7A42779D3E3000DF367 /* FavoriteView.m in Sources */,
 				A847DA5D276C932D001D1EBC /* attribute.c in Sources */,
 				A888AD61275A171D00542919 /* YBVideoPlayControllerViewController.m in Sources */,
@@ -788,6 +799,7 @@
 				A847DA59276C932D001D1EBC /* string_buffer.c in Sources */,
 				A8E3479F277C11970028B092 /* NSString+Extension.m in Sources */,
 				A85CF7902779C1F2000DF367 /* BaseViewController.m in Sources */,
+				A84AB47A27804C19009FEFAD /* YB91CommentViewModel.m in Sources */,
 				A8E34798277BEF500028B092 /* YBPreferenceManager.m in Sources */,
 				A876854E275B6BB20053EE9B /* SettingViewController.m in Sources */,
 				A85CF7A12779D3E3000DF367 /* AwemeListCell.m in Sources */,
