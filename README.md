@@ -17,11 +17,11 @@
 
 ### App截图
 
-<img src="/Users/forrest/dev/xcode_project/YellowBook/screenshot/1.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.29.43" style="zoom:100%;" />
+<img src="./screenshot/1.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.29.43" style="zoom:100%;" />
 
-<img src="/Users/forrest/dev/xcode_project/YellowBook/screenshot/2.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.30.24" style="zoom:100%;" />
+<img src="./screenshot/2.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.30.24" />
 
-<img src="/Users/forrest/dev/xcode_project/YellowBook/screenshot/3.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.30.51" style="zoom:100%;" />
+<img src="./screenshot/3.jpeg" alt="Simulator Screen Shot - iPhone 12 - 2022-01-02 at 14.30.51" style="zoom:100%;" />
 
 参考项目有
 
