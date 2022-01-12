@@ -138,6 +138,11 @@
         NSString *videoDuration = aTag.Query(@"span.duration").first().text();
         NSLog(@"视频时长: %@", videoDuration);
         videoModel.videoDuration = videoDuration;
+        NSString *videoThumb = aTag.Query(@"div.thumb-overlay").first().attr(@"id");
+        NSArray *thumbs = [videoThumb componentsSeparatedByString:@"_"];
+        videoThumb = [NSString stringWithFormat: @"https://vthumb.killcovid2021.com/thumb/%@.mp4", thumbs[1]];
+        videoModel.videoPreviewURL = videoThumb;
+        NSLog(@"videoThumb: %@", videoThumb);
         //*[@id="wrapper"]/div[1]/div[3]/div/div/div[1]/div/text()[2]
         NSString *videoContent = video.text();
         NSLog(@"视频内容: %@", videoContent);

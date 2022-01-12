@@ -28,7 +28,7 @@
         _videoCovers.clipsToBounds = YES;
         // _videoCovers.backgroundColor = [UIColor redColor];
         _videoCovers.layer.masksToBounds = YES;
-        _videoCovers.layer.cornerRadius = 15;
+        //_videoCovers.layer.cornerRadius = 15;
         _videoCovers.image = [UIImage imageNamed:@"cover"];
         [self.contentView addSubview:_videoCovers];
         
@@ -85,6 +85,7 @@
         
         [self setNeedsUpdateConstraints];
         [self setContentMode:UIViewContentModeCenter];
+        [self setBackgroundColor:[UIColor whiteColor]];
     }
     
     return self;

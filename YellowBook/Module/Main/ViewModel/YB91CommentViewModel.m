@@ -27,7 +27,7 @@
 - (void) loadDataWithIndex: (NSInteger) page
                    success:(void (^)(NSArray<YBCommentModel *> *commentArray))success
                    failure: (void (^)(NSString *message))failure {
-    NSString *url = [NSString stringWithFormat:@"https://www.91porn.com/show_comments2.php?VID=%@&start=%d&comment_per_page=30", _videoId, page];
+    NSString *url = [NSString stringWithFormat:@"https://www.91porn.com/show_comments2.php?VID=%@&start=%ld&comment_per_page=30", _videoId, (long)page];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];

@@ -7,12 +7,16 @@
 #import "YBMainTableViewCell.h"
 #import "YBVideoPlayControllerViewController.h"
 #import "YB91VideoViewModel.h"
+#import <SJVideoPlayer/SJVideoPlayer.h>
+#import <SJBaseVideoPlayer/UIScrollView+ListViewAutoplaySJAdd.h>
 
-@interface YBMainViewControllerTableViewController ()
+@interface YBMainViewControllerTableViewController ()<SJPlayerAutoplayDelegate>
 
 @property (nonatomic, copy) NSMutableArray<YBVideoModel *> * videoList;
 
 @property (nonatomic, copy) YB91VideoViewModel *viewModel;
+
+@property (nonatomic, strong) SJVideoPlayer *player;
 
 @end
 
@@ -75,6 +79,28 @@
 
     //[self.tableView.mj_header beginRefreshing];
     [self loadData];
+    
+    // 开启滑动自动播放
+    SJPlayerAutoplayConfig *config = [SJPlayerAutoplayConfig configWithPlayerSuperviewSelector:NSSelectorFromString(@"videoCovers") autoplayDelegate:self];
+    config.autoplayPosition = SJAutoplayPositionMiddle; // 播放距离中线最近的视频
+    [self.tableView sj_enableAutoplayWithConfig:config];
+}
+
+- (void)sj_playerNeedPlayNewAssetAtIndexPath:(NSIndexPath *)indexPath {
+    YBVideoModel *videoModel = _videoList[indexPath.row];
+    
+    if ( !_player ) {
+        _player = [SJVideoPlayer player];
+    }
+    
+    NSMutableDictionary * headers = [NSMutableDictionary dictionary];
+    [headers setObject:@"https://www.91porn.com/" forKey:@"Referer"];
+    //NSString *url = TEST_VIDEO_URL;
+    NSString *url = videoModel.videoPreviewURL;
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:@{@"AVURLAssetHTTPHeaderFieldsKey" : headers}];
+    
+    _player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:url] playModel:[SJPlayModel playModelWithTableView:self.tableView indexPath:indexPath superviewSelector:NSSelectorFromString(@"videoCovers")]];
+    _player.URLAsset.title = videoModel.videoTitle;
 }
 
 #pragma mark - Table view data source
@@ -156,6 +182,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.player vc_viewDidAppear];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.player vc_viewWillDisappear];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.player vc_viewDidDisappear];
+}
 
 - (void)pause {
     
